@@ -178,8 +178,8 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
                                 global $woocommerce;
 
                                 $order = &new WC_Order( $order_id );
-				// Set order status 'on-hold'
-                                $order->update_status('on-hold', __('Waiting for payment confirmation from Coinbase.', 'woothemes'));
+				// Set order status 'pending'
+                                $order->update_status('pending', __('Waiting for payment confirmation from Coinbase.', 'woothemes'));
                                 
                                 $callbackSecret = get_option("coinbase_callback_secret");
                                 if($callbackSecret === false) {
